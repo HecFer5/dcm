@@ -1,0 +1,48 @@
+{
+  "name": "mtc",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:frontend\" \"npm run dev:backend\"",
+    "start": "node server/index.js",
+    "build": "npm run build:frontend && npm run build:backend",
+    "dev:frontend": "cd cliente && vite",
+    "dev:backend": "nodemon server/index.js",
+    "build:frontend": "cd cliente && vite build",
+    "build:backend": "echo 'No build step for backend'",
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "cd cliente && vite preview"
+  },
+  "bin": "server/index.js",
+  "author": "",
+  "license": "ISC",
+  "pkg": {
+    "targets": [
+      "node18-win-x64"
+    ]
+  },
+  "dependencies": {
+    "@emotion/react": "^11.13.3",
+    "@emotion/styled": "^11.13.0",
+    "@heroicons/react": "^2.1.5",
+    "@mui/material": "^6.1.7",
+    "@vitejs/plugin-react": "^4.3.3",
+    "autoprefixer": "^10.4.20",
+    "axios": "^1.7.7",
+    "concurrently": "^9.1.0",
+    "cors": "^2.8.5",
+    "express": "^4.21.1",
+    "formik": "^2.4.6",
+    "morgan": "^1.10.0",
+    "mysql2": "^3.11.4",
+    "nodemon": "^3.1.7",
+    "postcss": "^8.4.49",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.28.0",
+    "react-table": "^7.8.0",
+    "tailwindcss": "^3.4.15",
+    "vite": "^5.4.11"
+  }
+}
